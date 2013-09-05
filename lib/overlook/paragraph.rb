@@ -1,12 +1,12 @@
 class Paragraph < Array
   def initialize text = 'All work and no play makes Jack a dull boy.', sentences = 20
-    @text = text
-    @count = sentences
+    @text          = text
+    @count         = sentences
     self.sentences = sentences
   end
 
   def text= t
-    @text = t
+    @text          = t
     self.sentences = @count
   end
 
