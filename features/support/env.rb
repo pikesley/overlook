@@ -8,14 +8,14 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
 
-Capybara.app = Overlook
+Capybara.app = Torrance
 
-class OverlookWorld
+class TorranceWorld
   include Capybara::DSL
   include RSpec::Expectations
   include RSpec::Matchers
 end
 
 World do
-  OverlookWorld.new
+  TorranceWorld.new
 end

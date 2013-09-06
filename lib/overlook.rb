@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'overlook/paragraph'
 
-class Overlook < Sinatra::Base
+class Torrance < Sinatra::Base
   get '/' do
     'Hello World!'
   end
@@ -9,7 +9,7 @@ class Overlook < Sinatra::Base
   get '/:count' do
     s = ''
     params[:count].to_i.times do
-      s << Paragraph.new.to_s
+      s << Overlook::Paragraph.new.to_s
     end
 
     s
