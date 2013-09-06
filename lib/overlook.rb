@@ -11,7 +11,6 @@ class Torrance < Sinatra::Base
     params[:count].to_i.times do
       s << Overlook::Paragraph.new.to_s
     end
-
     s
   end
 
