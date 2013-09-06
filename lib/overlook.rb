@@ -1,5 +1,6 @@
 require 'sinatra/base'
-require 'overlook/paragraph'
+require_relative 'overlook/paragraph'
+require_relative 'overlook/formatters'
 
 class Torrance < Sinatra::Base
   get '/' do
@@ -9,7 +10,7 @@ class Torrance < Sinatra::Base
   get '/:count' do
     s = ''
     params[:count].to_i.times do
-      s << Overlook::Paragraph.new.to_s
+      s << Overlook::Paragraph.new.output(Overlook::Formatters::HTML.new)
     end
     s
   end
