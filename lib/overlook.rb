@@ -4,7 +4,7 @@ require_relative 'overlook/formatters'
 
 class Torrance < Sinatra::Base
   get '/' do
-    'Hello World!'
+    redirect to '/1'
   end
 
   get '/:count' do
