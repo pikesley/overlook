@@ -5,3 +5,7 @@ RSpec::Core::RakeTask.new
 Cucumber::Rake::Task.new
 
 task :default => [:spec, :cucumber]
+
+task :run do
+  ruby 'lib/overlook.rb'
+end
