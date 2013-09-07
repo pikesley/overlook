@@ -13,4 +13,5 @@ gem 'capybara-webkit'
 gem 'cucumber'
 gem 'cucumber-sinatra'
 gem 'rspec'
+gem 'coveralls', require: false
 end
