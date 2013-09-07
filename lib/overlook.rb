@@ -3,6 +3,10 @@ require_relative 'overlook/paragraph'
 require_relative 'overlook/formatters'
 
 class Torrance < Sinatra::Base
+  get '/help' do
+    "HELP"
+  end
+
   get '/' do
     redirect to '/1'
   end
