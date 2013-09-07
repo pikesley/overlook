@@ -8,6 +8,7 @@ gem 'haml'
 gem 'sinatra-twitter-bootstrap', :require => 'sinatra/twitter-bootstrap'
 gem 'rake'
 gem 'travis'
+gem 'shotgun'
 
 group :test do
 gem 'capybara-webkit'
