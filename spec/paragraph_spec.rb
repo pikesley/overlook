@@ -51,5 +51,36 @@ module Overlook
         @para.output(Formatters::HTML.new).should =~ /^<p>.*<\/p>$/
       end
     end
+
+    describe 'busted paragraph' do
+      it 'should look like an HTML paragraph' do
+        @para.output(Formatters::Busted.new).should =~ /^<p>.*<\/p>$/
+      end
+
+      it 'should have configurable bustedness' do
+        @para.bustedness = 0.7
+        @para.bustedness.should == 0.7
+      end
+
+      it 'should have styled spans' do
+        @para.bustedness = 1
+        @para.output(Formatters::Busted.new).should =~ /<span style="/
+      end
+
+      it 'should have vertical-align set' do
+        @para.bustedness = 1
+        @para.output(Formatters::Busted.new).should =~ /<span style="[^>]*vertical-align: -?[0-9]*%; /
+      end
+
+      it 'should have font-weight set' do
+        @para.bustedness = 1
+        @para.output(Formatters::Busted.new).should =~ /<span style="[^>]*font-weight: [0-9]00; /
+      end
+
+      it 'should have letter-spacing set' do
+        @para.bustedness = 1
+        @para.output(Formatters::Busted.new).should =~ /<span style="[^>]*letter-spacing: -?[0-9]*px; /
+      end
+    end
   end
 end
