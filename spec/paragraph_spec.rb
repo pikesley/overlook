@@ -41,7 +41,7 @@ module Overlook
       it 'should take custom initialisation values' do
         new_text = 'I got a letter from the Government, the other day.'
         t        = make_paragraph new_text, 12
-        para     = Paragraph.new new_text, 13
+        para     = Paragraph.new new_text, 12
         para.to_s.should =~ t
       end
     end
