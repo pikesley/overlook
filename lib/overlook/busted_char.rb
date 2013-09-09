@@ -25,7 +25,7 @@ module Overlook
     end
 
     def output
-      if @styles
+      if @styles && @styles.length > 0
         s = '<span style="'
         @styles.each_pair do |k, v|
           s << "%s: %s; " % [

@@ -67,6 +67,11 @@ module Overlook
         @para.output(Formatters::Busted.new).should =~ /<span style="/
       end
 
+      it 'should not have any empty styles' do
+        @para.bustedness = 0.5
+        @para.output(Formatters::Busted.new).should_not =~ /<span style="">/
+      end
+
       it 'should have vertical-align set' do
         @para.bustedness = 1
         @para.output(Formatters::Busted.new).should =~ /<span style="[^>]*vertical-align: -?[0-9]*%; /
