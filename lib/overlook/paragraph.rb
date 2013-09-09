@@ -1,8 +1,11 @@
 module Overlook
   class Paragraph < Array
-    def initialize text = 'All work and no play makes Jack a dull boy.', sentences = 20
+    attr_accessor :bustedness
+
+    def initialize text = 'All work and no play makes Jack a dull boy.', sentences = 20, bustedness = 0.1
       @text          = text
       @count         = sentences
+      @bustedness = bustedness
       self.sentences = sentences
     end
 
