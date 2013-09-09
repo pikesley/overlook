@@ -16,9 +16,6 @@ module NavigationHelpers
     when /1/
       '/1'
 
-    when /help/
-      '/help'
-
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
