@@ -5,11 +5,12 @@ module Overlook
       @bustedness = bustedness
 
       if rand > (1 - @bustedness)
-        apply_styles @char
+        apply_styles
+        invertcase
       end
     end
 
-    def apply_styles char
+    def apply_styles
       @styles = {}
       if rand > (1 - @bustedness)
         @styles['vertical-align'] = "%d%%" % [rand(-15..15)]
@@ -21,6 +22,19 @@ module Overlook
 
       if rand > (1 - @bustedness)
         @styles['letter-spacing'] = "%dpx" % [rand(-1..3)]
+      end
+    end
+
+    def invertcase
+      if rand > (1 - @bustedness)
+        c = @char.chr
+        if c.match /\p{Lower}/
+          @char -= 32
+        end
+
+        if c.match /\p{Upper}/
+          @char += 32
+        end
       end
     end
 
