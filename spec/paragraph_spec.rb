@@ -86,6 +86,14 @@ module Overlook
         @para.bustedness = 1
         @para.output(Formatters::Busted.new).should =~ /<span style="[^>]*letter-spacing: -?[0-9]*px; /
       end
+
+      it 'should invert case' do
+        @para.bustedness = 1
+        @para.sentences = 1
+#        @para.output(Formatters::Busted.new).should =~ /<p>aLL WORK.*jACK<\/p>/
+        @para.output(Formatters::Busted.new).should =~ /<p><span[^>]*>a<\/span><span[^>]*>L<\/span><span[^>]*>L<\/span>/
+        @para.output(Formatters::Busted.new).should =~ /<span[^>]*>j<\/span><span[^>]*>A<\/span><span[^>]*>C<\/span><span[^>]*>K<\/span>/
+      end
     end
   end
 end
