@@ -21,7 +21,7 @@ module Overlook
       end
 
       if rand > (1 - @bustedness)
-        @styles['letter-spacing'] = "%dpx" % [rand(-1..3)]
+        @styles['letter-spacing'] = "%dpx" % [rand(-2..5)]
       end
     end
 
